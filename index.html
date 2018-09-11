@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Link Saver</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="app.css" />
+
+</head>
+
+<body>
+    <nav id="nav">
+        <div class="container" id="navContainer">
+            <h1 class="nav-header">Link Saver</h1>
+            <a id="addBtn">+</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="panel" id="addLinkPanel">
+            <h3 class="panel-heading">Add Link</h3>
+            <form id="addLinkForm">
+                <input type="text" name="title" id="linkTitle" class="form-control" placeholder="Title">
+                <input type="text" name="url" id="linkUrl" class="form-control" placeholder="Url">
+                <input type="text" name="category" id="linkCategory" class="form-control" placeholder="Categories (comma seperated)">
+
+                <div id="addedCetegories">
+
+                </div>
+
+                <input type="submit" id="submitButton" value="Submit">
+                <input type="submit" id="cancelButton" value="Cancel">
+            </form>
+        </div>
+
+        <div id="linkslist"></div>
+    </div>
+
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
