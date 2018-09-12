@@ -1,10 +1,52 @@
 const linkCategory = document.querySelector("#linkCategory");
 const submitButton = document.querySelector("#submitButton");
+const addBtn = document.querySelector('#addBtn');
+const cancelButton = document.querySelector('#cancelButton');
+const addLinkPanel = document.querySelector('#addLinkPanel');
+const linksList = document.querySelector('#linksList');
 
 // console.log(linkCategory);
 
 let linkCategories = [];
-let links = [];
+let links = [
+    {
+        title: 'New Link 1',
+        url: 'url1.com',
+        categories: ['node', 'angular']
+    },
+    {
+        title: 'New Link 2',
+        url: 'url2.com',
+        categories: ['js', 'angular']
+    },
+    {
+        title: 'New Link 3',
+        url: 'url3.com',
+        categories: ['node', 'bootstrap']
+    }
+];
+
+displayLinks();
+
+addBtn.addEventListener('click', (event) => {
+    console.log('click');
+    showFormPanel();
+});
+
+cancelButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log('cancel button clicked');
+    hideFormPanel();
+});
+console.log(addLinkPanel.classList);
+
+function showFormPanel() {
+    addLinkPanel.classList.remove('hidden');
+}
+
+function hideFormPanel() {
+    addLinkPanel.classList.add('hidden');
+}
 
 linkCategory.addEventListener('keydown', function(event) {
     // console.log(event);
@@ -23,7 +65,7 @@ linkCategory.addEventListener('keydown', function(event) {
         //Display the updated categories 
         displayLinkCategories();
     }
-})
+});
 
 function displayLinkCategories() {
     console.log("Displaying link categories");
@@ -59,4 +101,11 @@ submitButton.addEventListener('click', event => {
     linkCategories = [];
 
     displayLinkCategories();
+
+    // hide the addLinkPanel
+    hideFormPanel();
 });
+
+function displayLinks() {
+    linksList.innerHTML = ' ';
+}
